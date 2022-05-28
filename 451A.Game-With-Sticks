@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+        int intersec = rows * cols;
+        int moves = 0;
+        while(intersec > 0){
+            moves++;
+            intersec -= (rows+cols-1);
+            rows--;
+            cols--;
+        }
+        if(moves%2 == 0)
+            System.out.println("Malvika");
+        else
+            System.out.println("Akshat");
+    }
+}
