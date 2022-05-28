@@ -1,0 +1,25 @@
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) throws Exception{
+        Scanner sc = new Scanner(System.in);
+        int stud = sc.nextInt();
+        int puzzles = sc.nextInt();
+        int[] pieces = new int[puzzles];
+        for(int i = 0; i<puzzles; i++)
+            pieces[i] = sc.nextInt();
+        
+        Arrays.sort(pieces);
+        int start = 0;
+        int end = stud -1;
+        int diff = Integer.MAX_VALUE;
+        
+        while(end < puzzles){
+            diff = Math.min(pieces[end] - pieces[start], diff);
+            start += 1;
+            end += 1;
+        }
+        System.out.println(diff);
+    }
+}
