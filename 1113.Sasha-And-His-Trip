@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class Main {
+    private static Scanner sc = new Scanner(System.in);
+
+    public static void main(String args[]) {
+        int n = sc.nextInt()-1;
+        int v = sc.nextInt();
+        
+        if(v >= n){
+            System.out.println(n);
+            return;
+        }
+        
+        int cost = v, dis = n-v, i =1;
+        while(dis-- > 0){
+            i++;
+            cost += i;
+        }
+        System.out.println(cost);
+    }
+}
